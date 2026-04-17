@@ -1,14 +1,17 @@
 class Solution {
-    public static int chocolates(int n, int[] arr) {
-        // code here
-        int a = arr[0];
-        for(int i=0;i<arr.length;i++)
+    public int chocolates(int n, int[] arr) {
+        
+        int left = 0;
+        int right = n - 1;
+        
+        while(left < right)
         {
-            if(a>arr[i])
-            {
-                a=arr[i];
-            }
+            if(arr[left] > arr[right])
+                left++;
+            else
+                right--;
         }
-        return a;
+        
+        return arr[left];
     }
 }
