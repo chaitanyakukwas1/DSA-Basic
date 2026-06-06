@@ -1,20 +1,22 @@
 class Solution {
-    public boolean binarySearch(List<Integer> arr, int k) {
-        // code here
+    public boolean binarySearch(int[] arr, int k) {
         int low = 0;
-        int high = arr.size() - 1;
+        int high = arr.length - 1;
+        
         while(low<=high)
         {
             int mid = low + (high - low)/2;
-            if(arr.get(mid) == k)
+            if(arr[mid] == k)
             {
                 return true;
             }
-            if(arr.get(mid)< k)
+            
+            if(arr[mid] < k)
             {
-                low = mid+1;
+                low = mid + 1;
             }
-            else
+            
+            if(arr[mid] > k)
             {
                 high = mid - 1;
             }
